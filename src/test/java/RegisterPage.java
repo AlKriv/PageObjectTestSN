@@ -32,6 +32,44 @@ public class RegisterPage {
     By telCompanyField = By.xpath("//*[@id='stepper']/div/div[5]/div/div/div/div/form/div[1]/div[1]/div[7]/div/div/div/div[1]/input");
     By emailCompanyField = By.name("emailAddresses[0]");
     By termsCheckbox = By.name("terms");
-    By registerBzxzutton = By.xpath("//*[@id='stepper']/div/div[5]/div/div/div/div/form/div[2]/div[2]/button");
+    By registerButton = By.xpath("//*[@id='stepper']/div/div[5]/div/div/div/div/form/div[2]/div[2]/button");
 
+    public RegisterPage typeEmail(String email)
+    {
+        driver.findElement(emailField).sendKeys(email);
+        return this;
+
+    }
+    public RegisterPage typePassword(String password)
+    {
+        driver.findElement(passwordField).sendKeys(password);
+        return this;
+
+    }
+    public RegisterPage typeConfirmPassword(String confirmPassword)
+    {
+        driver.findElement(confirmPasswordField).sendKeys(confirmPassword);
+        return this;
+    }
+    public RegisterPage clickNextFirst()
+    {
+        driver.findElement(nextFirstGroupButton).click();
+        return this;
+    }
+    public RegisterPage typeName(String name)
+    {
+        driver.findElement(nameField).sendKeys(name);
+        return this;
+    }
+    public RegisterPage typeSurname(String surname)
+    {
+        driver.findElement(surnameField).sendKeys(surname);
+        return this;
+    }
+    public RegisterPage typeTel(String phone)
+    {
+        driver.findElement(telField).clear();
+        driver.findElement(telField).sendKeys(phone);
+        return this;
+    }
 }
