@@ -32,5 +32,6 @@ public class RegisterPage {
     By telCompanyField = By.xpath("//*[@id='stepper']/div/div[5]/div/div/div/div/form/div[1]/div[1]/div[7]/div/div/div/div[1]/input");
     By emailCompanyField = By.name("emailAddresses[0]");
     By termsCheckbox = By.name("terms");
-    By registerButton = By.xpath("//*[@id='stepper']/div/div[5]/div/div/div/div/form/div[2]/div[2]/button");
+    By registerBzxzutton = By.xpath("//*[@id='stepper']/div/div[5]/div/div/div/div/form/div[2]/div[2]/button");
+
 }
