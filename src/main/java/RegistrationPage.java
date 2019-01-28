@@ -134,7 +134,11 @@ public class RegistrationPage {
         $(termsCheckbox).setSelected(value);
         return this;
     }
+    public RegistrationPage setTersams(boolean value) {
 
+        $(termsCheckbox).setSelected(value);
+        return this;
+    }
     public void clickRegisterButton() {
         $(registerButton).click();
     }
