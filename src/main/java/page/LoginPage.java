@@ -39,7 +39,7 @@ public class LoginPage extends BasePage{
         $(By.xpath("//*[@class='raised-button']/button")).click();
     }
 
-    public void login (String log, String pass)
+    public MainDeckGeneralPage login (String log, String pass)
     {
         this.openPage()
                 .typeEmail(log)
@@ -51,6 +51,7 @@ public class LoginPage extends BasePage{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        return new MainDeckGeneralPage();
     }
 
     public SelenideElement LabelLoginError(){

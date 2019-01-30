@@ -42,9 +42,8 @@ public class LoginTest extends BaseTest {
     public void loginWithValidData()
     {
         LoginPage loginPage =new LoginPage();
-        loginPage.login(user.getEmail(),user.getPassword());
-        MainDeckGeneralPage mainDeckGeneral=new MainDeckGeneralPage();
-        mainDeckGeneral
+        loginPage
+                .login(user.getEmail(),user.getPassword())
                 .openMenu()
                 .getLabelEmail()
                 .shouldHave(Condition.matchText(user.getEmail()));
