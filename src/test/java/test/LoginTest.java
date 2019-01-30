@@ -3,9 +3,6 @@ package test;
 import com.codeborne.selenide.Condition;
 import org.testng.annotations.Test;
 import page.LoginPage;
-import page.MainDeckGeneralPage;
-
-import static com.codeborne.selenide.Selenide.sleep;
 
 public class LoginTest extends BaseTest {
 
