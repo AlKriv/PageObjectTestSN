@@ -2,8 +2,7 @@ package test;
 
 import Model.Company;
 import Model.User;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import org.testng.annotations.BeforeSuite;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.open;
@@ -18,6 +17,8 @@ public class BaseTest {
             .setPassword("qwerty")
             .setPhone1("777888999")
             .setPhone2("788999555")
+            .setWrongLogin("sdfnsi@i.ua")
+            .setWrongPassword("sodisocjdfweo")
             .build();
 
     Company company = Company.newEntity()
@@ -31,15 +32,10 @@ public class BaseTest {
             .setPhone2("733311222")
             .setSite("otr.org")
             .build();
-    @BeforeClass
+    @BeforeSuite
     public static void BeforeClass() {
         baseUrl = "https://testing.shipnext.com";
-    }
-
-    @Before
-    public void Before()
-    {
-
         open("https://shipnext:atdnsshinc@testing.shipnext.com");
     }
+
 }

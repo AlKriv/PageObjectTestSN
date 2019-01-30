@@ -1,5 +1,6 @@
 package Elements;
 
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
 import java.awt.*;
@@ -8,15 +9,24 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class MenuElement {
 
-    public MenuElement open()
+    public void close()
     {
-        $(By.id("Menu/Sandvich")).click();
-        return this;
+        $(By.xpath("//div[@class='_3iC0k']/button")).click();
+
     }
-    public MenuElement labelEmail()
+    public SelenideElement getLabelEmail()
     {
-        $(By.cssSelector("div._14yZE"));
-        return this;
+        return $(By.cssSelector("div._14yZE"));
+    }
+
+
+
+
+
+
+    //button
+    public SelenideElement loginButton(){
+       return $(By.cssSelector("a._2PTJD"));
     }
 
 }

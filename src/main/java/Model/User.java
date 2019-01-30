@@ -7,9 +7,19 @@ public class User {
     private String password;
     private String phone1;
     private String phone2;
+    private String wrongLogin;
+    private String wrongPassword;
 
     public static Builder newEntity() {
         return new User().new Builder();
+    }
+
+    public String getWrongLogin() {
+        return wrongLogin;
+    }
+
+    public String getWrongPassword() {
+        return wrongPassword;
     }
 
     public String getName() {
@@ -67,6 +77,15 @@ public class User {
 
         public Builder setPhone2(String phone2) {
             User.this.phone2 = phone2;
+            return this;
+        }
+        public Builder setWrongLogin (String wrongLogin)
+        {
+            User.this.wrongLogin=wrongLogin;
+            return this;
+        }
+        public Builder setWrongPassword(String wrongPassword){
+            User.this.wrongPassword=wrongPassword;
             return this;
         }
         public User build(){
