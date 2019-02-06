@@ -5,7 +5,14 @@ import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class AddShipPage {
+public class AddShipPage extends BasePage{
+
+    private String title ="MY SHIP: CREATE";
+
+
+    public String title() {
+        return title;
+    }
 
     //Button
     public FleetPage cancel(){
@@ -28,7 +35,7 @@ public class AddShipPage {
         return this;
     }
     public AddShipPage dwsSummer(String dws){
-        $(By.name("dw[summer]")).sendKeys(dws);
+        $(By.id("dw[summer]")).sendKeys(dws);
         return this;
     }
     public AddShipPage year(){

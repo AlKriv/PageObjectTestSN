@@ -1,5 +1,6 @@
 package page;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
@@ -46,12 +47,15 @@ public class LoginPage extends BasePage{
                 .typePassword(pass)
                 .clickSignIn();
 
-        try {
-            Thread.sleep(500);//нужно дождаться страницы с куками иначе не будет авторизации
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        return new MainDeckGeneralPage();
+
+        MainDeckGeneralPage mainDeckGeneralPage=new MainDeckGeneralPage();
+
+        mainDeckGeneralPage
+                .getTitle()
+                .shouldBe(Condition.visible)
+                .shouldBe(Condition.text(mainDeckGeneralPage.title()));
+
+        return mainDeckGeneralPage;
     }
 
     public SelenideElement LabelLoginError(){

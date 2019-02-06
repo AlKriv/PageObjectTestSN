@@ -1,5 +1,6 @@
 package Elements;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 import page.FleetPage;
@@ -7,6 +8,7 @@ import page.FleetPage;
 import java.awt.*;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.title;
 
 public class MenuElement {
 
@@ -55,7 +57,14 @@ public class MenuElement {
     }
     public FleetPage fleet(){
         $(By.xpath("//div[@class='_2ZrUi']/div[4]/div/div[2]//a")).click();
-        return new FleetPage();
+
+        FleetPage fleetPage=new FleetPage();
+        fleetPage
+                .getTitle()
+                .shouldBe(Condition.visible)
+                .shouldBe(Condition.text(fleetPage.title()));
+
+        return fleetPage;
     }
 
 
