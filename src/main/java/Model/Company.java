@@ -12,13 +12,12 @@ public class Company {
     private String phone1;
     private String phone2;
     private String email;
+    private String city;
+
 
     public String getCity() {
         return city;
     }
-
-    private String city;
-
 
     public String getCompany() {
         return company;

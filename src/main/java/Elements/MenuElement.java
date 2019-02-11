@@ -60,9 +60,7 @@ public class MenuElement {
 
         FleetPage fleetPage=new FleetPage();
         fleetPage
-                .getTitle()
-                .shouldBe(Condition.visible)
-                .shouldBe(Condition.text(fleetPage.title()));
+                .checkOpenPage();
 
         return fleetPage;
     }
