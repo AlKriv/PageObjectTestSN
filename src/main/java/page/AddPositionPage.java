@@ -3,7 +3,6 @@ package page;
 import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -35,9 +34,15 @@ public class AddPositionPage {
         $(By.xpath("//div[@role='menu']")).click();
         return this;
     }
-    public AddPositionPage openDate(String day, String mounth, String year){
+    public DatePage setDateOpen(String day, String mounth, String year){
         $(By.xpath("//input[@name='open[from]']")).click();
-        $(By.cssSelector("body > div:nth-child(13) > div")).find(byText("13")).click();
-        return this;
+
+        DatePage datePage =new DatePage($(By.cssSelector("body > div:nth-child(13) > div")));//the window for choise data
+
+        datePage
+                .checkOpen()
+                .setDateOpen(day,mounth,year);
+
+        return datePage;
     }
 }

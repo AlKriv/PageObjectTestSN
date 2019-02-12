@@ -51,7 +51,7 @@ public class e2eTest extends BaseTest {
                 .openPage()
                 .checkOpenPage()
                 .enterPort("odessa")
-                .openDate("12","02","2019");
+                .setDateOpen("22", "05", "2021");
 
 
     }
