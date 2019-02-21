@@ -23,8 +23,8 @@ public class BaseTest {
 
     @BeforeSuite
     public static void BeforeClass() {
-        baseUrl = "https://testing.shipnext.com";
-        open("https://shipnext:atdnsshinc@testing.shipnext.com");
+        baseUrl = "";
+        open("");
     }
     @BeforeTest
     public void BeforeTest(){
