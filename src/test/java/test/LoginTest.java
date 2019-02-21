@@ -3,6 +3,7 @@ package test;
 import com.codeborne.selenide.Condition;
 import org.testng.annotations.Test;
 import page.LoginPage;
+import page.MainDeckGeneralPage;
 
 public class LoginTest extends BaseTest {
 
@@ -38,9 +39,11 @@ public class LoginTest extends BaseTest {
     @Test(priority=4)
     public void loginWithValidData()
     {
-        LoginPage loginPage =new LoginPage();
-        loginPage
-                .login(user.getEmail(),user.getPassword())
+        //LoginPage loginPage =new LoginPage();
+        new LoginPage()
+                .login(user.getEmail(),user.getPassword());
+
+        new MainDeckGeneralPage().checkOpenPage()
                 .openMenu()
                 .getLabelEmail()
                 .shouldHave(Condition.matchText(user.getEmail()));
